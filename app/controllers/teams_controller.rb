@@ -11,7 +11,23 @@ class TeamsController < ApplicationController
   end
 
   def create
-    team = Team.create(name: params[:name], wins: params[:wins], losses: params[:losses], active: params[:active])
+    # team = Team.create(name: params[:name], wins: params[:wins], losses: params[:losses], active: params[:active])
+    team = Team.create(team_params)
     redirect_to "/teams"
+  end
+
+  def edit
+    @team = Team.find(params[:id])
+  end
+
+  def update
+    team = Team.find(params[:id])
+    team.update(team_params)
+    redirect_to "/teams"
+  end
+
+private
+  def team_params
+    params.permit(:name, :wins, :losses, :active)
   end
 end
