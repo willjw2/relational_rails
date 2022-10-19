@@ -26,7 +26,17 @@ RSpec.describe 'the teams show page' do
     player_2 = team.players.create!(name: "Seiya Suzuki", age: 28, retired: false)
 
     visit "/teams/#{team.id}"
-    
+
     expect(page).to have_link("Players")
+  end
+  it "displays the number of players on the team" do
+    team = Team.create!(name: "Chicago Cubs", wins: 74, losses: 88, active: true)
+    player = team.players.create!(name: "Kyle Hendricks", age: 32, retired: false)
+    player_2 = team.players.create!(name: "Seiya Suzuki", age: 28, retired: false)
+    player_3 = team.players.create!(name: "Test Testguy", age: 100, retired: true)
+
+    visit "/teams/#{team.id}"
+
+    expect(page).to have_content("Number of Players: 3")
   end
 end
