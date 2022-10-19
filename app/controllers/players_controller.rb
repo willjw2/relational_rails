@@ -1,6 +1,6 @@
 class PlayersController < ApplicationController
   def index
-    @players = Player.all
+    @players = Player.false_entries
   end
 
   def show
@@ -10,7 +10,7 @@ class PlayersController < ApplicationController
   def edit
     @player = Player.find(params[:id])
   end
-  
+
   def update
     player = Player.find(params[:id])
     player.update(player_params)
