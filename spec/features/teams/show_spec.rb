@@ -20,4 +20,13 @@ RSpec.describe 'the teams show page' do
     expect(page).to have_content(team.losses)
     expect(page).to have_content("Active?: true")
   end
+  it "links to the team's players page" do
+    team = Team.create!(name: "Chicago Cubs", wins: 74, losses: 88, active: true)
+    player = team.players.create!(name: "Kyle Hendricks", age: 32, retired: false)
+    player_2 = team.players.create!(name: "Seiya Suzuki", age: 28, retired: false)
+
+    visit "/teams/#{team.id}"
+    
+    expect(page).to have_link("Players")
+  end
 end
