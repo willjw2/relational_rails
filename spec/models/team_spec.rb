@@ -11,4 +11,14 @@ RSpec.describe Team do
       expect(Team.sort_by_recently_created).to eq([bears, eagles, cubs])
     end
   end
+  describe 'player_count' do
+    it 'returns the number of players belonging to the team' do
+      team = Team.create!(name: "Chicago Cubs", wins: 74, losses: 88, active: true)
+      player = team.players.create!(name: "Kyle Hendricks", age: 32, retired: false)
+      player_2 = team.players.create!(name: "Seiya Suzuki", age: 28, retired: false)
+      player_3 = team.players.create!(name: "Test Testguy", age: 100, retired: true)
+
+      expect(team.player_count).to eq(3)
+    end
+  end
 end
