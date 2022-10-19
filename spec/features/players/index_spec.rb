@@ -12,7 +12,7 @@ RSpec.describe 'the players index page' do
 
     expect(page).to have_content("Kyle Hendricks")
     expect(page).to have_content("Seiya Suzuki")
-    expect(page).to have_content("idk")
+    # expect(page).to have_content("idk")
   end
 
   it "displays the attributes of the players" do
@@ -25,7 +25,8 @@ RSpec.describe 'the players index page' do
     visit "/players"
 
     expect(page).to have_content("Age: 32")
-    expect(page).to have_content("Age: 100")
-    expect(page).to have_content("Retired?: true")
+    expect(page).to have_content("Retired?: false")
+    expect(page).to_not have_content("Age: 100")
+    expect(page).to_not have_content("Retired?: true")
   end
 end
