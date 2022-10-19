@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get '/players', to: 'players#index'
   get '/players/:id', to: 'players#show'
   get '/teams/:team_id/players', to: 'team_players#index'
+  delete '/teams/:id', to: 'teams#destroy'
 end

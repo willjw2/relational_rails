@@ -5,7 +5,7 @@ RSpec.describe 'teams edit' do
     team = Team.create!(name: "Chicago Cubs", wins: 74, losses: 88, active: true)
     visit '/teams'
 
-    click_button "Edit #{team.name}"
+    click_button "Update #{team.name}"
 
     expect(current_path).to eq("/teams/#{team.id}/edit")
   end
@@ -14,8 +14,8 @@ RSpec.describe 'teams edit' do
     visit '/teams'
     expect(page).to have_content("Chicago C")
 
-    click_button 'Edit Chicago C'
-    
+    click_button 'Update Chicago C'
+
     fill_in 'name', with: 'Chicago Cubs'
     fill_in 'wins', with: 74
     fill_in 'losses', with: 88

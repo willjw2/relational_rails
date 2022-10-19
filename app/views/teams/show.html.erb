@@ -4,3 +4,4 @@
 <p>Losses: <%= @team.losses %></p>
 <p>Active?: <%= @team.active %></p>
 <p>Number of Players: <%= @team.player_count %></p>
+<p><%= button_to "Delete", "/teams/#{@team.id}", method: :delete %></p>
