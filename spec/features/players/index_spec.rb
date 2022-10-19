@@ -12,7 +12,7 @@ RSpec.describe 'the players index page' do
 
     expect(page).to have_content("Kyle Hendricks")
     expect(page).to have_content("Seiya Suzuki")
-    # expect(page).to have_content("idk")
+    expect(page).to_not have_content("idk")
   end
 
   it "displays the attributes of the players" do
