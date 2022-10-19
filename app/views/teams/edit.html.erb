@@ -1,0 +1,15 @@
+<%= form_with url: "/teams/#{@team.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, value: "#{@team.name}" %>
+
+  <%= form.label :wins %>
+  <%= form.text_field :wins, value: "#{@team.wins}"%>
+
+  <%= form.label :losses %>
+  <%= form.text_field :losses, value: "#{@team.losses}"%>
+
+  <%= form.label :active? %>
+  <%= form.text_field :active, value: "#{@team.active}"%>
+
+  <%= form.submit 'Update Team' %>
+<% end %>
