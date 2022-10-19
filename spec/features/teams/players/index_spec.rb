@@ -23,4 +23,13 @@ RSpec.describe 'Teams players index' do
 
     expect(current_path).to eq("/players/#{@player.id}")
   end
+  # it 'has a link to sort players alphabetically' do
+  #   player_3 = @team.players.create!(name: "Sammy Sosa", age: 53, retired: true)
+  #   visit "/teams/#{@team.id}/players"
+  #
+  #   click_button "Sort Alphabetically"
+  #   expect(current_path).to eq("/teams/#{@team.id}/players")
+  #   # expect("Sammy Sosa").to appear_before("Seiya Suzuki", only_text: true)
+  #   # expect("Kyle Hendricks").to appear_before("Sammy Sosa", only_text: true)
+  # end
 end

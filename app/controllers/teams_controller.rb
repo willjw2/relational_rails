@@ -28,7 +28,8 @@ class TeamsController < ApplicationController
 
   def destroy
     team = Team.find(params[:id])
-    team.players.each {|player| player.destroy}
+    #do this in model (deleting references)
+    # team.players.each {|player| player.destroy}
     team.destroy
     redirect_to "/teams"
   end

@@ -1,5 +1,5 @@
 class Team < ApplicationRecord
-  has_many :players
+  has_many :players, dependent: :destroy
 
   def self.sort_by_recently_created
     Team.order(created_at: :desc)

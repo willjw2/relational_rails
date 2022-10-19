@@ -1,4 +1,5 @@
 <p><%= button_to "Create Player", "/teams/#{@team.id}/players/new", method: :get %></p>
+<p><%= button_to "Sort Alphabetically", "/teams/#{@team.id}/players?sort=true", method: :get %></p>
 <% @players.each do |player| %>
   <p><%= link_to player.name, "/players/#{player.id}" %><p>
   <p>Team: <%= player.team.name %></p>

@@ -1,5 +1,6 @@
 class TeamPlayersController < ApplicationController
   def index
+    # require "pry"; binding.pry
     @team = Team.find(params[:team_id])
     @players = @team.players
   end
