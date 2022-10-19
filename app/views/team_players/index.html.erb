@@ -1,6 +1,6 @@
-<br>
+<p><%= button_to "Create Player", "/teams/#{@team.id}/players/new", method: :get %></p>
 <% @players.each do |player| %>
-  <%= link_to player.name, "/players/#{player.id}" %>
+  <p><%= link_to player.name, "/players/#{player.id}" %><p>
   <p>Team: <%= player.team.name %></p>
   <p>Age: <%= player.age %></p>
   <p>Retired?: <%= player.retired %></p>

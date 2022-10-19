@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   patch '/teams/:id', to: 'teams#update'
   get '/players', to: 'players#index'
   get '/players/:id', to: 'players#show'
-  get '/teams/:team_id/players', to: 'team_players#index'
   delete '/teams/:id', to: 'teams#destroy'
+  get '/teams/:team_id/players', to: 'team_players#index'
+  get '/teams/:team_id/players/new', to: 'team_players#new'
+  post '/teams/:team_id/players', to: 'team_players#create'
 end
