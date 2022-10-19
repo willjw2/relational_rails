@@ -26,7 +26,7 @@ RSpec.describe 'the players show page' do
     player_2 = team.players.create!(name: "Seiya Suzuki", age: 28, retired: false)
 
     visit "/players/#{player.id}"
-    save_and_open_page
+    
     expect(page).to have_content(player.name)
     expect(page).to have_content(player.age)
     expect(page).to have_content("Retired?: false")
